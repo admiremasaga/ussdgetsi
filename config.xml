@@ -33,7 +33,7 @@
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
 	<plugin name="cordova-plugin-splashscreen" spec="~3.2.2" />
 	<plugin spec="https://github.com/Rohfosho/CordovaCallNumberPlugin.git"/>
-	<plugin spec="https://github.com/rehy/cordova-plugin-sms-receiver"/>
+	<plugin name="cordova-plugin-sms-receiver/>
 	<splash src="splash.png" platform="android" width="320" height="480"/>
 	<icon src="icon.png" />
 	<splash src="splash.png" width="320" height="480"/>
