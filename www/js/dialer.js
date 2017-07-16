@@ -1,5 +1,5 @@
 function dialNum(){
-window.plugins.CallNumber.callNumber(onSuccess, onError, "+263773384458", bypassAppChooser);
+window.plugins.CallNumber.callNumber(onSuccess, onError, "0773384458", bypassAppChooser);
 function onSuccess(result){
   alert ('calling');
   console.log("Success:"+result);
