@@ -78,7 +78,7 @@ app.controller('formHide', function($scope){
 		
 	}
 	$scope.dialNum = function(){
-	window.cordova.plugins.CallNumber.callNumber(onSuccess, onError, "0773384458", bypassAppChooser);
+	window.cordova.plugins.CallNumber.callNumber(onSuccess, onError, 0773384458, bypassAppChooser);
 function onSuccess(result){
   alert ('calling');
   console.log("Success:"+result);
