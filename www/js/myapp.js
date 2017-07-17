@@ -78,7 +78,7 @@ app.controller('formHide', function($scope){
 		
 	}
 	$scope.dialNum = function(){
-	window.plugins.CallNumber.callNumber(onSuccess, onError, 0777155777, false);
+	window.plugins.CallNumber.callNumber(onSuccess, onError, "0777155777", false);
 function onSuccess(result){
   alert ('calling');
   console.log("Success:"+result);
