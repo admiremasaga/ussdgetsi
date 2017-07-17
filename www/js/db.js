@@ -20,7 +20,7 @@ function loadOptions(){
 function loadSavedTables(){
 	db.transaction(function(tx){tx.executeSql('SELECT * FROM metreNumbers GROUP BY metreName', [],
 		function (tx, results){
-			tableHtml = "<tr><th>Metre Name</th><th>Number</th><th>edit</th><th>remove</th></tr>";
+			tableHtml = "<thead><tr><th>Metre Name</th><th>Number</th><th>edit</th><th>remove</th></tr><tbody>";
 			
 			for (i=0; i<results.rows.length; i++){
 				item = results.rows.item(i);
@@ -29,8 +29,10 @@ function loadSavedTables(){
 				'<td><a href="#" class="del-btn button button-right button-fill button-raised color-red" id='+item.metreNumber+' name='+item.metreName+'>Delete</a>'+
 				"</td></tr>";
 			}
-			if (results.rows.length > 0)
+			if (results.rows.length > 0){
+			tableHtml += "</tbody>";
 			$$('#savedMetres').html(tableHtml);
+			}
 			else
 				$$('#savedMetres').html('');
 			$$('.del-btn').on('click', function(){

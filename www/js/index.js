@@ -1,6 +1,7 @@
 var myApp = new Framework7({
 	pushState: true,
 	material: true,
+	swipePanel: 'left'
 	
 	
 });

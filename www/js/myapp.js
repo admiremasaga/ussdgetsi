@@ -58,6 +58,7 @@ app.controller('formHide', function($scope){
 		}
 		else{
 		$$('#regFab').html('&nbsp New<i class="icon icon-plus"></i>');
+		$$("#amt").val(parseInt('')).trigger('change');
 		$scope.reg = false;
 		$scope.buy = true;
 		loadOptions();
@@ -69,7 +70,7 @@ app.controller('formHide', function($scope){
 		metreName = $$("#metreName").val();
 		db.transaction(function(tx) {tx.executeSql('UPDATE metreNumbers SET metreNumber =' + metreNumber +', metreName = "'+ metreName + '" where metreNumber ='+id);}, function(err) {alert ('failed'+err.code+ 'because'+ err.message);}, function(){});
 		myApp.formDeleteData('buyform');
-		$$("#metre").val(parseInt('')).trigger('change');
+		$$("#metre").val('').trigger('change');
 		$$("#metreName").val('').trigger('change');
 		loadSavedTables();
 		$$('#editbutton').hide();
@@ -77,16 +78,23 @@ app.controller('formHide', function($scope){
 		
 		
 	}
-	$scope.dialNum = function(){
-	window.plugins.CallNumber.callNumber(onSuccess, onError, "*151#", false);
+	$scope.buyZESA = function(){
+		amt = $$("#amt").val();
+		metreNumber = $$("#select-metre").val();
+		ussdnum = "*151*2*6*1*1*"+amt+"*"+metreNumber+"#";
+		$scope.dialNum(ussdnum);
+	}
+	
+	$scope.dialNum = function(ussdnum){
+	window.plugins.CallNumber.callNumber(onSuccess, onError, ussdnum, false);
 function onSuccess(result){
-  alert ('calling');
-  console.log("Success:"+result);
+  $$("#amt").val('').trigger('change');
 }
 
 function onError(result) {
+  $$("#amt").val('').trigger('change');
   console.log("Error:"+result);
-  alert ('failed '+result);
+  alert ('sorry failed to purchase token this is because '+result);
 }
 	}
 });
