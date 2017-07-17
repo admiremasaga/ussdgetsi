@@ -12,3 +12,8 @@ var $$ = Dom7;
 
 var mainView = myApp.addView('.view-main', {
 });
+$$(document).on('deviceready', function() {
+	$$('.panel-links').on('click', function(e){
+				myApp.closePanel();
+			});
+});

@@ -98,3 +98,6 @@ function onError(result) {
 }
 	}
 });
+$$('.totop').on('click', function(){
+	$$(".page-content").scrollTop(0);
+});
