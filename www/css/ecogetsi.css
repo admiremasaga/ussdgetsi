@@ -4,3 +4,9 @@
 .navbar{
 	box-shadow: 1px 3px 2px gray;
 }
+table{
+	width: 100%;
+}
+.right{
+	text-align: right;
+}
