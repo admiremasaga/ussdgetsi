@@ -31,11 +31,15 @@ function loadSavedTables(){
 			}
 			if (results.rows.length > 0){
 			tableHtml += "</tbody>";
+			$$(".tableh1").removeClass("regdisappear");
 			$$('#savedMetres').html(tableHtml);
 			}
-			else
+			else{
+				$$("#metre").val('').trigger('change');
+				$$("#metreName").val('').trigger('change');
+				$$(".tableh1").addClass("regdisappear");
 				$$('#savedMetres').html('');
-			
+			}
 			$$('.del-btn').on('click', function(){
 				id = this.id;
 				delMetre(id);

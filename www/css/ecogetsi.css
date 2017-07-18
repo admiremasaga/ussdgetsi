@@ -1,3 +1,9 @@
+.tableh1 {
+	text-align: center;
+	color: blue;
+	text-shadow: 2px 2px 4px gray;
+	box-shadow: 1px 3px 2px gray;
+}
 .regdisappear {
 	display: none;
 }
@@ -14,6 +20,7 @@ table{
 td, th {
     border: 1px solid #ddd;
     padding: 8px;
+	font-size: 120%;
 }
 
 tr:nth-child(even){background-color: #f2f2f2;}
