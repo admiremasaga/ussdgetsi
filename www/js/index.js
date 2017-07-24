@@ -13,7 +13,30 @@ var $$ = Dom7;
 var mainView = myApp.addView('.view-main', {
 });
 $$(document).on('deviceready', function() {
+	
 	$$('.panel-links').on('click', function(e){
 				myApp.closePanel();
 			});
+			
+			window.plugins.sim.getSimInfo(successCallback, errorCallback);
 });
+
+				function successCallback(result) {
+				 
+				 console.log(result);
+				 simcardjson = JSON.stringify(result);
+				 alert(simcardjson);
+				}
+
+				function errorCallback(error) {
+					alert('something screwed up');
+				  console.log(error);
+				}
+
+				function hasReadPermission() {
+				  window.plugins.sim.hasReadPermission(successCallback, errorCallback);
+				}
+				
+				function requestReadPermission() {
+				  window.plugins.sim.requestReadPermission(successCallback, errorCallback);
+				}
