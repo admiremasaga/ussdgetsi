@@ -79,6 +79,10 @@ app.controller('formHide', function($scope){
 		
 	}
 	$scope.buyZESA = function(){
+		if (currentCarrier == "ECONET")
+			alert('ecocash');
+		else
+			alert('telecash or onewallet');
 		amt = $$("#amt").val();
 		metreNumber = $$("#select-metre").val();
 		ussdnum = "*151*2*6*1*1*"+amt+"*"+metreNumber+"#";
