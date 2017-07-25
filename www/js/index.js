@@ -25,6 +25,7 @@ $$(document).on('deviceready', function() {
 				 
 				 console.log(result);
 				simcardjson = JSON.stringify(result);
+				alert(simcardjson);
 				simcardjson = JSON.parse(simcardjson);
 				 currentCarrier = simcardjson.carrierName;
 				
