@@ -80,13 +80,13 @@ app.controller('formHide', function($scope){
 	}
 	$scope.buyZESA = function(){
 		switch (currentCarrier){
-			case 'ECONET':
+			case '04':
 				alert('ecocash');
 				break;
-			case 'TELECEL ZIMBABWE':
+			case '03':
 				alert('telecash');
 				break;
-			case 'NetOne':
+			case '01':
 				alert('onemoney');
 				break;
 			default :
