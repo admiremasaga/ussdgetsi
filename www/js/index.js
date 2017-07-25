@@ -25,7 +25,7 @@ $$(document).on('deviceready', function() {
 				 
 				 console.log(result);
 				simcardjson = JSON.stringify(result);
-				alert('saga :' + simcardjson.carrierName);
+				alert('saga :' + simcardjson);
 				 simcardjson = JSON.parse(result);
 				 alert('admire :' + simcardjson.carrierName);
 				}
