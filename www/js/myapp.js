@@ -79,12 +79,30 @@ app.controller('formHide', function($scope){
 		
 	}
 	$scope.buyZESA = function(){
-		switch (currentCarrier){
+		amt = $$("#amt").val();
+		metreNumber = $$("#select-metre").val();
+                 switch (currentCarrier){
 			case '04':
-				alert('ecocash');
+				 ussdnum = "*151*2*6*1*1*"+amt+"*"+metreNumber+"#";
+				$scope.dialNum(ussdnum);
 				break;
 			case '03':
-				alert('telecash');
+		 	        myApp.modal({title: 'enter telecash pin',
+				              text: '<input type="password" class="modal-text-input" id="mypass">',
+				              buttons: [{text: 'ok',
+				                       onClick: function(value){
+				                              mypass = $$('#mypass').val();
+				                              if (mypass.replace(/^\s+|\s+$/g, "").length != 0){
+				                              ussdnum = "*888*1*2*"+metreNumber+"*"+amt+"*"+value+"#";
+				                              $scope.dialNum(ussdnum);
+						}
+					}
+					},
+				{text: 'cancel',
+					}
+					]
+			
+		});
 				break;
 			case '01':
 				alert('onemoney');
@@ -92,10 +110,6 @@ app.controller('formHide', function($scope){
 			default :
 				alert('Current carrier is' + currentCarrier);
 				      }
-		amt = $$("#amt").val();
-		metreNumber = $$("#select-metre").val();
-		ussdnum = "*151*2*6*1*1*"+amt+"*"+metreNumber+"#";
-		$scope.dialNum(ussdnum);
 	}
 	
 	$scope.dialNum = function(ussdnum){
