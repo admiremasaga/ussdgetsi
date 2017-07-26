@@ -39,3 +39,9 @@ th {
 #regFab{
 	position: fixed;
 }
+#mypass {
+	border-bottom:1px solid #757575;
+}
+#mypass:focus {
+	border-bottom:2px solid blue;
+}
