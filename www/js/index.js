@@ -13,6 +13,17 @@ var $$ = Dom7;
 var mainView = myApp.addView('.view-main', {
 });
 $$(document).on('deviceready', function() {
+	var permissions = cordova.plugins.permissions;	
+	permissions.requestPermission(permissions.ACCESS_NETWORK_STATE, success, error);
+	permissions.requestPermission(permissions.INTERNET, success, error);
+	
+		function error() {
+		  console.warn('permission is not turned on');
+		}
+		 
+		function success( status ) {
+		  if( !status.checkPermission ) error();
+		}
 	
 	$$('.panel-links').on('click', function(e){
 				myApp.closePanel();
