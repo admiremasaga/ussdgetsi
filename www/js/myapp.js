@@ -88,7 +88,7 @@ app.controller('formHide', function($scope){
 				break;
 			case '03':
 		 	        myApp.modal({title: 'enter telecash pin',
-				              text: '<div class="item-content"><div class="item-inner"><div class="item-title floating-label">PIN</div><div class ="item-input"><input type="password" class="modal-text-input" id="mypass"></div></div></div>',
+				              text: '<div class="item-content"><div class="item-inner"><div class="item-title floating-label">PIN</div><div class ="item-input"><input type="password" name="mypass" id="mypass"></div></div></div>',
 					     	
 				              buttons: [{text: 'ok',
 				                       onClick: function(value){
