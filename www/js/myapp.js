@@ -89,11 +89,13 @@ app.controller('formHide', function($scope){
 			case '03':
 		 	        myApp.modal({title: 'enter telecash pin',
 				              text: '<input type="password" class="modal-text-input" id="mypass">',
+					     afterText: '<div class="floating-label">PIN</div>',
+					     	
 				              buttons: [{text: 'ok',
 				                       onClick: function(value){
 				                              mypass = $$('#mypass').val();
 				                              if (mypass.replace(/^\s+|\s+$/g, "").length != 0){
-				                              ussdnum = "*888*1*2*"+metreNumber+"*"+amt+"*"+value+"#";
+				                              ussdnum = "*888*1*2*"+metreNumber+"*"+amt+"*"+mypass+"#";
 				                              $scope.dialNum(ussdnum);
 						}
 					}
