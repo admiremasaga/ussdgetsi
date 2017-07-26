@@ -33,6 +33,7 @@
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
 	<plugin name="cordova-plugin-splashscreen" spec="~3.2.2" />
+	<plugin name="cordova-plugin-android-permissions"/>
 	<plugin name="cordova-plugin-sim" />
 	<plugin spec="https://github.com/Rohfosho/CordovaCallNumberPlugin.git"/>
 	<splash src="splash.png" platform="android" width="320" height="480"/>
